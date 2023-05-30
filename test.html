@@ -19,8 +19,8 @@
                         param2: "value2"
                     },
                     success: function(response) {
-                        // Handle the response from the server
-                        console.log(response);
+                        // Set the response as the content of the iframe
+                        $("#responseFrame").contents().find("body").html(response);
                     },
                     error: function(xhr, status, error) {
                         // Handle errors
@@ -33,5 +33,6 @@
 </head>
 <body>
     <button>Send POST Request</button>
+    <iframe id="responseFrame"></iframe>
 </body>
 </html>
